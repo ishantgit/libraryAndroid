@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        UnfoldSDK.init(this,"key");
+        super.onResume();
+    }
+
+    @Override
     protected void onPause() {
         UnfoldSDK.dumpHierarchy(this);
         super.onPause();
